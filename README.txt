@@ -19,3 +19,10 @@
 18.	Node.js command prompt call "npm start" to begin on localhost:3000
 19. 	Create new file "index.html" within project root directory
 20.	Add what is necessary to index.html
+21.	Make sure to include the livereload script to index.html
+
+
+To externally add:
+1.	Clone project (Look up how to clone project if needed)
+2. 	Call "npm install" within cloned directory 
+3.	Call "npm start"
