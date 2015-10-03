@@ -4,11 +4,15 @@
   "description": "WebGL earth with locations I've been in the world.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.13.3",
     "three.js": "^0.72.0"
+  },
+  "devDependencies": {
+    "livereload": "^0.3.7"
   }
 }
