@@ -10,6 +10,7 @@
 	</head>
 	<body>
 		<script src="node_modules/three.js/build/three.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
     <script>
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -18,23 +19,29 @@
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
-      var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+      controls = new THREE.OrbitControls( camera, renderer.domElement );
+				//controls.addEventListener( 'change', render ); // add this only if there is no animation loop (requestAnimationFrame)
+				controls.enableDamping = true;
+				controls.dampingFactor = 0.25;
+				controls.enableZoom = false;
+
+      var geometry = new THREE.SphereGeometry( 5, 32, 32 );
       var material = new THREE.MeshNormalMaterial();
-      var cube = new THREE.Mesh( geometry, material );
-      scene.add( cube );
+      var sphere = new THREE.Mesh( geometry, material );
+      scene.add( sphere );
 
       camera.position.z = 5;
 
       var render = function () {
         requestAnimationFrame( render );
 
-        cube.rotation.x += 0.1;
-        cube.rotation.y += 0.1;
+        sphere.rotation.x += 0.01;
+        sphere.rotation.y += 0.01;
 
         renderer.render(scene, camera);
       };
 
-    render();
+      render();
 		</script>
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js"></' + 'script>')</script>
 	</body>
