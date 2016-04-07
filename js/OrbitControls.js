@@ -7,6 +7,10 @@
  */
 /*global THREE, console */
 
+// This is a WebGL tutorial using code from http://learningthreejs.com/blog/2013/09/16/how-to-make-the-earth-in-webgl/
+// I have edited the code based on the above authors to experiment with WebGL for personal experience. 
+
+
 ( function () {
 
 	function OrbitConstraint ( object ) {
